@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh docker ps -a | grep "shroom-ui" | awk '{print $1}' | xargs -I {} sh -c 'docker stop {} && docker rm {}'
+                sh "docker ps -a | grep "shroom-api" | awk '{print $1}' | xargs -I {} sh -c 'docker stop {} && docker rm {}'"
                 sh "docker run -d -p 8000:8000 ${DOCKER_IMAGE_NAME}"
             }
         }
