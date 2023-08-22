@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-z)u%7!2yuy0@dz8a)a4$56gs9q9zbtxu2%-9t_)$nszq8_6lot
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '*',
+]
 
 
 # Application definition
@@ -75,7 +77,10 @@ WSGI_APPLICATION = 'shroom.wsgi.application'
 
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add the URL of your React app
+    "http://localhost:3000",
+    "jenkins.tomjbriggs.com",
+    "46.105.174.113",
+    "*"
 ]
 
 # Database
