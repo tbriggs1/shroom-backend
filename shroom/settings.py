@@ -75,21 +75,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shroom.wsgi.application'
 
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "jenkins.tomjbriggs.com",
-    "46.105.174.113",
-    "*"
-]
+CORS_ALLOWED_ORIGINS = ['http://*', 'https://*']
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "jenkins.tomjbriggs.com",
+#     "46.105.174.113",
+#     "*"
+# ]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'shroom',
+        'USER': 'tom',
+        'PASSWORD': 'password',
+        'HOST': '46.105.174.113',
+        'PORT': '',
     }
 }
 
